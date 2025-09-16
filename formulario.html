@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Tartas y Pastas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5e6fa; /* lila suave */
+      color: #4a235a; /* lila oscuro para contraste */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      max-width: 450px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      color: #7d3c98; /* tono lila */
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #a569bd; /* lila medio */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #8e44ad; /* lila más intenso */
+    }
+
+    /* Estilos estrellas */
+    .stars {
+      display: flex;
+      gap: 5px;
+      font-size: 25px;
+      cursor: pointer;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .stars input {
+      display: none;
+    }
+
+    .stars label {
+      color: #ccc;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: #f1c40f; /* dorado */
+    }
+
+    /* Estilo del botón de inicio */
+    .back-btn {
+      background-color: #3498db; /* azul claro */
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #2980b9; /* azul más oscuro */
+    }
+  </style>
+</head>
+<body>
+  <form action="https://formspree.io/f/xqalvygv" method="POST">
+    <h2>🍰 Pedido de Tartas y Pastas</h2>
+
+    <label for="name">Nombre completo:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="tarta">¿Qué tipo de tarta prefieres?</label>
+    <select id="tarta" name="tarta" required>
+      <option value="">-- Selecciona una opción --</option>
+      <option value="chocolate">Tarta de chocolate</option>
+      <option value="queso">Tarta de queso</option>
+      <option value="frutas">Tarta de frutas</option>
+      <option value="vainilla">Tarta de vainilla</option>
+      <option value="otra">Otra (especificar en comentarios)</option>
+    </select>
+
+    <label for="pasta">¿Qué tipo de pasta te interesa?</label>
+    <select id="pasta" name="pasta" required>
+      <option value="">-- Selecciona una opción --</option>
+      <option value="pasta corta">Pasta corta (penne, fusilli, etc.)</option>
+      <option value="pasta larga">Pasta larga (espagueti, tallarines, etc.)</option>
+      <option value="rellena">Pasta rellena (ravioles, tortellini, etc.)</option>
+      <option value="otra">Otra (especificar en comentarios)</option>
+    </select>
+
+    <label for="cantidad">Cantidad aproximada (porciones / paquetes):</label>
+    <input type="number" id="cantidad" name="cantidad" min="1" required>
+
+    <label for="message">Comentarios adicionales:</label>
+    <textarea id="message" name="message" rows="4" placeholder="Ejemplo: sin azúcar, extra crema, gluten free..."></textarea>
+
+    <!-- Estrellas -->
+    <label>¿Cómo te pareció nuestro servicio?</label>
+    <div class="stars">
+      <input type="radio" id="star5" name="calificacion" value="5"><label for="star5">★</label>
+      <input type="radio" id="star4" name="calificacion" value="4"><label for="star4">★</label>
+      <input type="radio" id="star3" name="calificacion" value="3"><label for="star3">★</label>
+      <input type="radio" id="star2" name="calificacion" value="2"><label for="star2">★</label>
+      <input type="radio" id="star1" name="calificacion" value="1"><label for="star1">★</label>
+    </div>
+
+    <input type="hidden" name="_subject" value="Nuevo pedido de tartas y pastas 🍰">
+
+    <button type="submit">Enviar pedido</button>
+  </form>
+
+  <!-- Botón de redirección a la página de inicio -->
+  <a href="archivo bueno.html">
+    <button type="button" class="back-btn">Volver al Inicio</button>
+  </a>
+</body>
+</html>
